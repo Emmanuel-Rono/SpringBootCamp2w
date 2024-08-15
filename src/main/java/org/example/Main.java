@@ -1,21 +1,17 @@
 package org.example;
 
+import AutoConfig.AppConfig;
+import AutoConfig.Car;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
 //Using Application Context
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("beans.xml");
-
-        //get the bean
-        Sim sim = applicationContext.getBean("sim", Sim.class);
-
-        // Calling the methods
-        sim.calling();
-        sim.data();
-
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        Car car = context.getBean(Car.class);
+        car.drive();
     }
 }

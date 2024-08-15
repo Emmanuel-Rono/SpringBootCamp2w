@@ -3,20 +3,14 @@ package org.example;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Vodafone  implements  Sim
-{
-
+public class Airtel implements Sim {
     @Override
     public void data() {
-        System.out.println("Vodafone Data");
-
+            System.out.println("org.example.Airtel Data");
     }
 
     @Override
     public void calling() {
-        System.out.println("Vodafone Calling");
-
+            System.out.println("org.example.Airtel Calling");
     }
-
-
 }
